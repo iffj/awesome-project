@@ -1,26 +1,59 @@
+<div style="margin-left:64px; margin-right:64px;">
 <h1>Prayers</h1>
 
 <p>
-    <%= link_to "create new prayer", new_prayer_path %>
+    <%= link_to "New Prayer", new_prayer_path, class:"btn btn-primary"%>
 </p>
-<table>
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>뉴욕 교회 기도 명단</h4></div>
+    <table class="table table-bordered">
+        <tr>
+            <th width="15%">Prayer</th>
+            <th width="15%">Name</th>
+            <th width="15%">Relationship</th>
+            <th width="35%">Remark</th>
+            <th width="10%">Edit</th>
+            <th width="10%">Delete</th>
+
+        </tr>
+
+        <% @korean_prayers.each do |prayer| %>
+
+        <tr>
+            <td><%= prayer.prayer %></td>
+            <td><%= prayer.name %></td>
+            <td><%= prayer.relationship %></td>
+            <td><%= prayer.note %></td>
+            <td><%= link_to 'Edit', edit_prayer_path(prayer)%></td>
+            <td><%= link_to 'Delete', prayer_path(prayer), method: :delete, data: {confirm: "are you sure?"}%></td>
+        </tr>
+
+        <% end %>
+    </table>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-heading"><h4>New York Church Prayer Requests</h4></div>
+<table class="table table-bordered">
     <tr>
-        <th>Prayer</th>
-        <th>Name</th>
-        <th>Relationship</th>
-        <th>Remark</th>
+        <th width="15%">Prayer</th>
+        <th width="15%">Name</th>
+        <th width="15%">Relationship</th>
+        <th width="35%">Remark</th>
+        <th width="10%">Edit</th>
+        <th width="10%">Delete</th>
     </tr>
-
-    <% @prayers.each do |prayer| %>
-
+        <% @english_prayers.each do |prayer2| %>
     <tr>
-        <td><%= prayer.name %></td>
-        <td><%= prayer.recipient %></td>
-        <td><%= prayer.relation %></td>
-        <td><%= prayer.remark %></td>
-        <td><%= link_to 'Edit', edit_prayer_path(prayer)%></td>
-        <td><%= link_to 'Delete', prayer_path(prayer), method: :delete, data: {confirm: "are you sure?"}%></td>
+        <td><%= prayer2.english_prayer %></td>
+        <td><%= prayer2.english_name %></td>
+        <td><%= prayer2.english_relationship %></td>
+        <td><%= prayer2.english_note %></td>
+        <td><%= link_to 'Edit', edit_prayer_path(prayer2)%></td>
+        <td><%= link_to 'Delete', prayer_path(prayer2), method: :delete, data: {confirm: "are you sure?"}%></td>
     </tr>
 
     <% end %>
 </table>
+</div>
+</div>

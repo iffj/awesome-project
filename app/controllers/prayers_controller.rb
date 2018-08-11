@@ -1,6 +1,7 @@
 class PrayersController < ApplicationController
   def index
-    @prayers = Prayer.all
+    @korean_prayers = Prayer.select('id', 'prayer', 'name', 'relationship', 'note').order(:prayer)
+    @english_prayers = Prayer.select('id', 'english_prayer', 'english_name', 'english_relationship', 'english_note').order(:english_prayer)
   end
 
   def new
@@ -14,8 +15,7 @@ class PrayersController < ApplicationController
   def create
     @prayer = Prayer.new(prayer_params)
     if @prayer.save
-      flash[:notice] = "added to prayer list"
-      redirect_to prayer_path(@prayer)
+      redirect_to prayers_path
     else
       render 'new'
     end
@@ -44,8 +44,11 @@ class PrayersController < ApplicationController
 
   private
   def prayer_params
-    params.require(:prayer).permit(:name, :recipient, :relation, :remark)
+    params.require(:prayer).permit(:prayer, :name, :relationship, :note, :english_prayer, :english_name, :english_relationship, :english_note)
   end
 
+  def english_prayer_params
+    params.require(:prayer).permit(:englishName, :englishRecipient, :englishRelation, :englishRemark)
+  end
 
 end
