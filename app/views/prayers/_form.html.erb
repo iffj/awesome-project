@@ -1,0 +1,25 @@
+<h1>hi</h1>
+
+<%= form_for @prayer do |f| %>
+    <p>
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+    </p>
+     <p>
+        <%= f.label :recipient %>
+        <%= f.text_field :recipient %>
+    </p>
+     <p>
+        <%= f.label :relation %>
+        <%= f.text_field :relation %>
+    </p>
+     <p>
+        <%= f.label :remark %>
+        <%= f.text_field :remark %>
+    </p>
+    <p>
+        <%= f.submit %>
+    </p>
+<% end %>
+
+<%= link_to "back", prayers_path %>

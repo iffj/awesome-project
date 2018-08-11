@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  get 'prayer/index'
+  get 'prayers/index'
+
+  resources :prayers
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

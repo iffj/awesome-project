@@ -1,0 +1,26 @@
+<h1>Prayers</h1>
+
+<p>
+    <%= link_to "create new prayer", new_prayer_path %>
+</p>
+<table>
+    <tr>
+        <th>Prayer</th>
+        <th>Name</th>
+        <th>Relationship</th>
+        <th>Remark</th>
+    </tr>
+
+    <% @prayers.each do |prayer| %>
+
+    <tr>
+        <td><%= prayer.name %></td>
+        <td><%= prayer.recipient %></td>
+        <td><%= prayer.relation %></td>
+        <td><%= prayer.remark %></td>
+        <td><%= link_to 'Edit', edit_prayer_path(prayer)%></td>
+        <td><%= link_to 'Delete', prayer_path(prayer), method: :delete, data: {confirm: "are you sure?"}%></td>
+    </tr>
+
+    <% end %>
+</table>
