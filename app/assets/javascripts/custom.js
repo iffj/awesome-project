@@ -1,4 +1,4 @@
-$(document).ready(function(){
+$(document).on('turbolinks:load',function(){
     $('#korean_prayer_input').change(function(){
         $.ajax({
             type:"GET",
@@ -23,6 +23,22 @@ $(document).ready(function(){
             dataType:'text',
             success:function(data, status, xhr){
                 $('#english_name_input').val(data);
+            },
+            error:function(data, status, xhr){
+                console.log(data);
+                console.log(status);
+            }
+        });
+    });
+
+    $('#relationship_input').change(function(){
+        $.ajax({
+            type:"GET",
+            url:"/prayers/get_english_relation",
+            data: {kn:$('#relationship_input').val()},
+            dataType:'text',
+            success:function(data, status, xhr){
+                $('#english_relationship_input').val(data);
             },
             error:function(data, status, xhr){
                 console.log(data);

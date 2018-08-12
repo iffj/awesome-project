@@ -40,6 +40,18 @@ class PrayersController < ApplicationController
 
     #End Prayee --end
 
+    # Save Relation -- start
+    relation = @prayer.relationship
+    eng_relation = @prayer.english_relationship
+
+    r = Relation.find_by relation: relation
+
+    if(r.nil?)
+      @relation = Relation.new(relation: relation, eng_relation: eng_relation)
+      @relation.save!
+    end
+
+    # Save Relation --end
     if @prayer.save!
       redirect_to prayers_path
     else
@@ -90,6 +102,17 @@ class PrayersController < ApplicationController
     end
 
     render json: ep.eng_name and return
+  end
+
+  def get_english_relation
+    relation = params[:kn]
+
+    ep = Relation.where(relation: relation).select("eng_relation").first
+    if(ep.nil?)
+      render json:'' and return
+    end
+
+    render json: ep.eng_relation and return
   end
 
   private
