@@ -1,0 +1,2 @@
+class Prayee < ApplicationRecord
+end
