@@ -5,27 +5,27 @@
     <%= link_to "New Prayer", new_prayer_path, class:"btn btn-primary"%>
 </p>
 <div class="panel panel-default">
-  <div class="panel-heading"><h4>뉴욕 교회 기도 명단</h4></div>
+  <div class="panel-heading"><h4>뉴욕 교회 기도 명단 (최종 업데이트: 08/11/2018)</h4></div>
     <table class="table table-bordered">
         <tr>
-            <th width="15%">Prayer</th>
-            <th width="15%">Name</th>
-            <th width="15%">Relationship</th>
-            <th width="35%">Remark</th>
-            <th width="10%">Edit</th>
-            <th width="10%">Delete</th>
+            <th width="15%" style="text-align:center;">Prayer</th>
+            <th width="15%" style="text-align:center;">Name</th>
+            <th width="15%" style="text-align:center;">Relationship</th>
+            <th width="35%" style="text-align:center;">Remark</th>
+            <th width="10%" style="text-align:center;">Edit</th>
+            <th width="10%" style="text-align:center;">Delete</th>
 
         </tr>
 
         <% @korean_prayers.each do |prayer| %>
 
         <tr>
-            <td><%= prayer.prayer %></td>
-            <td><%= prayer.name %></td>
-            <td><%= prayer.relationship %></td>
-            <td><%= prayer.note %></td>
-            <td><%= link_to 'Edit', edit_prayer_path(prayer)%></td>
-            <td><%= link_to 'Delete', prayer_path(prayer), method: :delete, data: {confirm: "are you sure?"}%></td>
+            <td style="text-align:center;"><%= prayer.prayer %></td>
+            <td style="text-align:center;"><%= prayer.name %></td>
+            <td style="text-align:center;"><%= prayer.relationship %></td>
+            <td style="text-align:center;"><%= prayer.note %></td>
+            <td style="text-align:center;"><%= link_to 'Edit', edit_prayer_path(prayer)%></td>
+            <td style="text-align:center;"><%= link_to 'Delete', prayer_path(prayer), method: :delete, data: {confirm: "are you sure?"}%></td>
         </tr>
 
         <% end %>
@@ -33,24 +33,24 @@
 </div>
 
 <div class="panel panel-default">
-  <div class="panel-heading"><h4>New York Church Prayer Requests</h4></div>
+  <div class="panel-heading"><h4>New York Church Prayer Requests (L/U: 08/11/2018)</h4></div>
 <table class="table table-bordered">
     <tr>
-        <th width="15%">Prayer</th>
-        <th width="15%">Name</th>
-        <th width="15%">Relationship</th>
-        <th width="35%">Remark</th>
-        <th width="10%">Edit</th>
-        <th width="10%">Delete</th>
+        <th width="15%" style="text-align:center;">Prayer</th>
+        <th width="15%" style="text-align:center;">Name</th>
+        <th width="15%" style="text-align:center;">Relationship</th>
+        <th width="35%" style="text-align:center;">Remark</th>
+        <th width="10%" style="text-align:center;">Edit</th>
+        <th width="10%" style="text-align:center;">Delete</th>
     </tr>
         <% @english_prayers.each do |prayer2| %>
     <tr>
-        <td><%= prayer2.english_prayer %></td>
-        <td><%= prayer2.english_name %></td>
-        <td><%= prayer2.english_relationship %></td>
-        <td><%= prayer2.english_note %></td>
-        <td><%= link_to 'Edit', edit_prayer_path(prayer2)%></td>
-        <td><%= link_to 'Delete', prayer_path(prayer2), method: :delete, data: {confirm: "are you sure?"}%></td>
+        <td style="text-align:center;"><%= prayer2.english_prayer %></td>
+        <td style="text-align:center;"><%= prayer2.english_name %></td>
+        <td style="text-align:center;"><%= prayer2.english_relationship %></td>
+        <td style="text-align:center;"><%= prayer2.english_note %></td>
+        <td style="text-align:center;"><%= link_to 'Edit', edit_prayer_path(prayer2)%></td>
+        <td style="text-align:center;"><%= link_to 'Delete', prayer_path(prayer2), method: :delete, data: {confirm: "are you sure?"}%></td>
     </tr>
 
     <% end %>
