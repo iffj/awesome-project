@@ -1,8 +1,7 @@
 <div style="margin-left:64px; margin-right:64px;">
 <h1>Prayers</h1>
-
 <p>
-    <%= link_to "New Prayer", new_prayer_path, class:"btn btn-primary"%>
+    <%= link_to "New Prayer", {:controller => "prayers", :action => "new", :prayerlistid => @prayerlist_id }, class:"btn btn-primary"%>
 </p>
 <div class="panel panel-default">
   <div class="panel-heading"><h4>뉴욕 교회 기도 명단 (최종 업데이트: 08/11/2018)</h4></div>

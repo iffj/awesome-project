@@ -1,10 +1,14 @@
 class PrayersController < ApplicationController
   def index
-    @korean_prayers = Prayer.select('id', 'prayer', 'name', 'relationship', 'note').order(:prayer)
-    @english_prayers = Prayer.select('id', 'english_prayer', 'english_name', 'english_relationship', 'english_note').order(:english_prayer)
+    @prayerlist_id = params[:prayerlistid]
+
+    @korean_prayers = Prayer.where(listid: @prayerlist_id).select('id', 'prayer', 'name', 'relationship', 'note').order(:prayer)
+    @english_prayers = Prayer.where(listid: @prayerlist_id).select('id', 'english_prayer', 'english_name', 'english_relationship', 'english_note').order(:english_prayer)
   end
 
   def new
+    @prayerlist_id = params[:prayerlistid]
+
     @prayer = Prayer.new
   end
 
@@ -14,6 +18,8 @@ class PrayersController < ApplicationController
 
   def create
     @prayer = Prayer.new(prayer_params)
+    pid = params[:listid]
+    @prayer.listid = pid
 
     #Save member --start
     english_prayer = @prayer.english_prayer
@@ -53,7 +59,7 @@ class PrayersController < ApplicationController
 
     # Save Relation --end
     if @prayer.save!
-      redirect_to prayers_path
+      redirect_to prayers_path prayerlistid:pid
     else
       render 'new'
     end
@@ -117,7 +123,7 @@ class PrayersController < ApplicationController
 
   private
   def prayer_params
-    params.require(:prayer).permit(:prayer, :name, :relationship, :note, :english_prayer, :english_name, :english_relationship, :english_note)
+    params.require(:prayer).permit(:prayer, :name, :relationship, :note, :english_prayer, :english_name, :english_relationship, :english_note, :listid)
   end
 
   def english_prayer_params

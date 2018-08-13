@@ -1,0 +1,9 @@
+<div style="margin-left:64px; margin-right:64px;">
+<div class="page-header">
+  <h1>Prayer Requests List</h1>
+</div>
+
+<% @prayerlists.each do |list| %>
+    <div style="margin-left:8px"><%=link_to list.title, {:controller => "prayers", :action => "index", :prayerlistid => list.id }%></div>
+<% end %>
+</div>

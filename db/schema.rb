@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_08_12_054712) do
+ActiveRecord::Schema.define(version: 2018_08_12_220332) do
 
   create_table "Prayers", force: :cascade do |t|
     t.string "prayer"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2018_08_12_054712) do
     t.string "english_name"
     t.string "english_relationship"
     t.string "english_note"
+    t.integer "listid"
   end
 
   create_table "members", force: :cascade do |t|
@@ -37,6 +38,21 @@ ActiveRecord::Schema.define(version: 2018_08_12_054712) do
     t.string "kor_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "prayer_lists", force: :cascade do |t|
+    t.string "title"
+    t.datetime "last_update"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "prayerlists", force: :cascade do |t|
+    t.string "title"
+    t.datetime "last_update"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "englishtitle"
   end
 
   create_table "relations", force: :cascade do |t|

@@ -1,0 +1,2 @@
+class Prayerlist < ApplicationRecord
+end

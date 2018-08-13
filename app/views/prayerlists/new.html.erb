@@ -1,0 +1,25 @@
+<div style="margin-left:64px; margin-right:64px">
+<%= form_for @prayerlists, :html => {:class => "form-horizontal"} do |f|%>
+    <div class="form-group">
+        <label for="prayerlist_title_input" class="col-sm-2 control-label">기도명단</label>
+        <div class="col-sm-10">
+            <%= f.text_field :title, class:"form-control", placeholder:"기도명단", id:"prayerlist_title_input",:autofocus => true, :required => true%>
+        </div>
+    </div>
+     
+     <div class="form-group">
+        <label for="prayerlist_englishtitle_input" class="col-sm-2 control-label">Title</label>
+        <div class="col-sm-10">
+            <%= f.text_field :englishtitle, class:"form-control", placeholder:"Prayer List Title", id:"prayerlist_englishtitle_input", :required => true%>
+        </div>
+    </div>
+
+    <input type="hidden" id="prayer_list_id" value="#{@user.token}" />
+
+    <div style="display:flex; flex-direction:row-reverse">
+        <%= f.submit :class=>'btn btn-success' %>
+    </div>
+<% end %>
+
+<%= link_to "back", prayerlists_path, {:style=>'display:flex; flex-direction:row-reverse;'} %>
+</div>
