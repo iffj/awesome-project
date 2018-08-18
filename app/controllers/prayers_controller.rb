@@ -2,6 +2,10 @@ class PrayersController < ApplicationController
   def index
     @prayerlist_id = params[:prayerlistid]
 
+    if @prayerlist_id.nil?
+      @prayerlist_id = 1
+    end
+    
     @korean_prayers = Prayer.where(listid: @prayerlist_id).select('id', 'prayer', 'name', 'relationship', 'note').order(:prayer)
     @english_prayers = Prayer.where(listid: @prayerlist_id).select('id', 'english_prayer', 'english_name', 'english_relationship', 'english_note').order(:english_prayer)
   end

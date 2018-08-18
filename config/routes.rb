@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root :to => 'prayers#index'
+
   get 'prayers/index'
   get 'prayerlist/index'
 
