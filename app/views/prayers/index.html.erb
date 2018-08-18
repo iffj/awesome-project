@@ -4,6 +4,14 @@
     <%= link_to "New Prayer", {:controller => "prayers", :action => "new", :prayerlistid => @prayerlist_id }, class:"btn btn-primary"%>
 </p>
 
+
+<ul class="nav nav-pills nav-justified">
+  <li role="presentation" class="active"><a data-toggle="tab" href="#korean-prayers-lists">Korean</a></li>
+  <li role="presentation"><a data-toggle="tab" href="#english-prayers-lists">English</a></li>
+</ul>
+
+<div class="tab-content" style="margin-top:8px;">
+<div id="korean-prayers-lists" class="tab-pane fade in active">
 <div class="panel panel-default">
   <div class="panel-heading"><h4>뉴욕 교회 기도 명단 (최종 업데이트: 08/18/2018)</h4></div>
     <table class="table table-bordered">
@@ -31,7 +39,9 @@
         <% end %>
     </table>
 </div>
+</div>
 
+<div id="english-prayers-lists" class="tab-pane fade">
 <div class="panel panel-default">
   <div class="panel-heading"><h4>New York Church Prayer Requests (L/U: 08/18/2018)</h4></div>
 <table class="table table-bordered">
@@ -55,5 +65,7 @@
 
     <% end %>
 </table>
+</div>
+</div>
 </div>
 </div>
