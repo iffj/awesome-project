@@ -1,7 +1,83 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+Member.create!([
+  {eng_name: "Cathy Kwon", kor_name: "권성아"},
+  {eng_name: "Andrew Kim", kor_name: "김종엽"},
+  {eng_name: "Mariam", kor_name: "마리암"},
+  {eng_name: "Jungho Park", kor_name: "박정호"},
+  {eng_name: "David Park", kor_name: "박해민"},
+  {eng_name: "Jin Xian Liu", kor_name: "류금선"},
+  {eng_name: "Leslie Lee", kor_name: "이애숙"},
+  {eng_name: "Xiang Liu", kor_name: "류향"},
+  {eng_name: "Jiaqi", kor_name: "짜치"},
+  {eng_name: "Xiangling Wu", kor_name: "오향령"},
+  {eng_name: "Kevin", kor_name: "케빈"},
+  {eng_name: "John Park", kor_name: "박재민"},
+  {eng_name: "Sookhee Kim", kor_name: "김숙희"},
+  {eng_name: "Miran Kim", kor_name: "김미란"},
+  {eng_name: "Kay Park", kor_name: "박경숙"},
+  {eng_name: "Hyangsook Kim", kor_name: "김향숙"},
+  {eng_name: "Okboon Kang", kor_name: "강옥분"},
+  {eng_name: "Huilan Cui", kor_name: "최혜란"}
+])
+Prayee.create!([
+  {eng_name: "Geumsook Park", kor_name: "박금숙"},
+  {eng_name: "Jinho Kim", kor_name: "김진호"},
+  {eng_name: "Jungwan Kim", kor_name: "김중완"},
+  {eng_name: "Donghyun Kim", kor_name: "김동현"},
+  {eng_name: "Ku's Couple", kor_name: "구본성 부부"},
+  {eng_name: "Sangseop Park", kor_name: "박상섭"},
+  {eng_name: "Alejandra", kor_name: "알레한드라"},
+  {eng_name: "Valeri", kor_name: "발레리"},
+  {eng_name: "Olenka", kor_name: "올렌카"},
+  {eng_name: "Jinsoo Kim", kor_name: "김진수"},
+  {eng_name: "David", kor_name: "데이빗"},
+  {eng_name: "Allen", kor_name: "알렌"},
+  {eng_name: "Sanmeong Li", kor_name: "리산멍"},
+  {eng_name: "Diana Wi", kor_name: "다이아나 위"},
+  {eng_name: "Amy1", kor_name: "에이미1"},
+  {eng_name: "Amy2", kor_name: "에이미2"},
+  {eng_name: "Eunjoo Jun", kor_name: "전은주"},
+  {eng_name: "Jiyeon Park", kor_name: "박지연"},
+  {eng_name: "Inha", kor_name: "인하"},
+  {eng_name: "Jinyoung", kor_name: "진영"},
+  {eng_name: "Yong Fu", kor_name: "부용"},
+  {eng_name: "Kun Wu", kor_name: "오군"},
+  {eng_name: "Chunli Cui", kor_name: "최춘려"},
+  {eng_name: "Jason", kor_name: "제이슨"},
+  {eng_name: "Sean Li", kor_name: "션 리"},
+  {eng_name: "Inyong Jang", kor_name: "장인용"},
+  {eng_name: "Heeja Lee", kor_name: "이희자"},
+  {eng_name: "Soonae Lee", kor_name: "이순애"},
+  {eng_name: "Insook Park", kor_name: "박인숙"},
+  {eng_name: "Ilchun Shin", kor_name: "신일천"},
+  {eng_name: "Moonhee Kim", kor_name: "김문희"},
+  {eng_name: "Yang's Couple", kor_name: "양씨 부부"},
+  {eng_name: "Laundry Worker", kor_name: "세탁소 할아버지"},
+  {eng_name: "Choi", kor_name: "최선생님"},
+  {eng_name: "Karry Park", kor_name: "박영훈"},
+  {eng_name: "Son's Friend", kor_name: "아들 친구"},
+  {eng_name: "Sungil Kim", kor_name: "김성일"},
+  {eng_name: "Sungduk Kim", kor_name: "김성덕"},
+  {eng_name: "Ri Zhu Huang", kor_name: "황일주"},
+  {eng_name: "He Lin Huang", kor_name: "황학림"},
+  {eng_name: "Jose", kor_name: "호세"},
+  {eng_name: "Jang", kor_name: "장선생님"},
+  {eng_name: "Chunkwon Kim", kor_name: "김춘권"}
+])
+Prayerlist.create!([
+  {title: "8월 대전도집회 기도명단", last_update: nil, englishtitle: "August Bible Seminar Prayer Requests"}
+])
+Relation.create!([
+  {relation: "직장동료", eng_relation: "Coworker"},
+  {relation: "전 직장상사", eng_relation: "Ex-coworker"},
+  {relation: "어머니", eng_relation: "Mother"},
+  {relation: "친구", eng_relation: "Friend"},
+  {relation: "지인", eng_relation: "Acquaint"},
+  {relation: "아버지", eng_relation: "Father"},
+  {relation: "오빠", eng_relation: "Brother"},
+  {relation: "새언니", eng_relation: "Sister-in-law"},
+  {relation: "아들", eng_relation: "Son"},
+  {relation: "아들 친구", eng_relation: "Son's Friend"},
+  {relation: "딸", eng_relation: "Daughter"},
+  {relation: "남편", eng_relation: "Husband"},
+  {relation: "호세b 삼촌", eng_relation: "b.Jose Uncle"}
+])
