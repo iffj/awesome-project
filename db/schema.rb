@@ -59,16 +59,16 @@ ActiveRecord::Schema.define(version: 2018_08_12_220332) do
   end
 
   create_table "prayers", force: :cascade do |t|
+    t.string "prayer"
     t.string "name"
-    t.string "recipient"
-    t.string "relation"
-    t.string "remark"
+    t.string "relationship"
+    t.string "note"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "englishName"
-    t.string "englishRecipient"
-    t.string "englishRelation"
-    t.string "englishRemark"
+    t.string "english_prayer"
+    t.string "english_name"
+    t.string "english_relationship"
+    t.string "english_note"
   end
 
   create_table "relations", force: :cascade do |t|

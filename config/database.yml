@@ -11,20 +11,20 @@ default: &default
 
 development:
   <<: *default
-  # database: db/my_database_development
-  adapter: postgresql
-  host: ec2-54-235-212-58.compute-1.amazonaws.com
-  username: tmashwamgkzwip
-  database: d5s10rf2koulme
-  password: aee81bb43af65f251f7ea3bbd5cc8a1742d25196f067c799f362ee1043319430
+  database: my_database_development
+
+
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: db/my_database_test
+  database: my_database_test
 
+# production:
+#   <<: *default
+#   database: my_database_production
 production:
   adapter: postgresql
   host: ec2-54-235-212-58.compute-1.amazonaws.com
